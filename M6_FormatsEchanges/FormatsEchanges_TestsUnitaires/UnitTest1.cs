@@ -1,9 +1,9 @@
-using FormatsEchanges_LibrairieClasses.Entites;
+
 using System;
 using Xunit;
 using Moq;
-using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesXML;
 using System.Collections.Generic;
+using FormatsEchanges_LibrairieClasses.Entites;
 using FormatsEchanges_LibrairieClasses.TraitementsLots.ModifierNomPrenomPremiereLettreMajuscule;
 using FormatsEchanges_LibrairieClasses.TraitementsLots.ModifierPaysMajusculesClients;
 

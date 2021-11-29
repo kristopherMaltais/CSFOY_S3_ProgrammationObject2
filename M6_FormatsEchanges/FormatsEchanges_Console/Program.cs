@@ -1,9 +1,9 @@
 ﻿using System;
 using FormatsEchanges_LibrairieClasses.Entites;
 using System.Collections.Generic;
-using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesXML;
-using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesJSON;
 using Unity;
+using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesJSON;
+using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesXML;
 
 namespace FormatsEchanges_Console
 {
@@ -13,7 +13,7 @@ namespace FormatsEchanges_Console
         {
             IUnityContainer conteneur = new UnityContainer();
 
-            conteneur.RegisterType<IDepotClients, DepotClientsJSON>(TypeLifetime.Singleton, new Unity.Injection.InjectionConstructor(new object[] { "C:\\info\\S3\\Poo2\\CSFOY__S3_ProgrammationObject2\\M6_FormatsEchanges2\\FormatsEchanges_Console\\bin\\Debug\\netcoreapp3.1\\testJSON" }));
+            conteneur.RegisterType<IDepotClients, DepotClientsXML>(TypeLifetime.Singleton, new Unity.Injection.InjectionConstructor(new object[] { "C:\\Users\\rache\\OneDrive\\Bureau\\M6_FormatsEchanges\\FormatsEchanges_Console\\bin\\Debug\\net5.0\\testXML" }));
 
             ClientUIConsole clientUIConsole = conteneur.Resolve<ClientUIConsole>();
             clientUIConsole.ExecuterUI();

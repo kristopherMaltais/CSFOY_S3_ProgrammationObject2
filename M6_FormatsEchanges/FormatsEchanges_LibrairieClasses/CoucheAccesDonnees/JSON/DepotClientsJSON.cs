@@ -19,7 +19,6 @@ namespace FormatsEchanges_LibrairieClasses.CoucheAccesDonneesJSON
         public DepotClientsJSON(string p_nomFichier)
         {
             this.m_nomFichier = p_nomFichier;
-            //this.m_cheminFichier = $"bin\\Debug\\netcoreapp3.1\\{p_nomFichier}"; // à revoir ca ici, ca ne fonctionne pas RIP
         }
 
         // ** Méthodes ** //
@@ -79,7 +78,7 @@ namespace FormatsEchanges_LibrairieClasses.CoucheAccesDonneesJSON
         {
             List<ClientJSONDTO> clientsDTO = new List<ClientJSONDTO>();
 
-            if (File.Exists("C:\\info\\S3\\Poo2\\CSFOY__S3_ProgrammationObject2\\M6_FormatsEchanges2\\FormatsEchanges_Console\\bin\\Debug\\netcoreapp3.1\\testJSON"))
+            if (File.Exists(this.m_nomFichier))
             {
                 string chaineJSON = File.ReadAllText(this.m_nomFichier);
                 JsonSerializerSettings settings = new JsonSerializerSettings

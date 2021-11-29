@@ -126,6 +126,12 @@ namespace LibrairieClasses
         }
         public static Matrice2D MatriceTransposee(Matrice2D p_matriceATransposer)
         {
+            // Préconditions
+            if(p_matriceATransposer == null)
+            {
+                throw new ArgumentNullException("La matrice ne peut pas être null", "p_matriceATransposer");
+            }
+
             Matrice2D matriceTransposee = new Matrice2D(p_matriceATransposer.NombreDeColonnes, p_matriceATransposer.NombreDeLignes);
 
             for (int ligne = 0; ligne < matriceTransposee.NombreDeLignes; ligne++)
@@ -174,8 +180,6 @@ namespace LibrairieClasses
         public static Matrice2D operator - (Matrice2D p_matrice1, Matrice2D p_matrice2)
         {
             // Précondition
-
-            // Précondition
             if (p_matrice1 == null)
             {
                 throw new ArgumentNullException("La matrice ne peut pas être null", "p_matrice1");
@@ -205,8 +209,6 @@ namespace LibrairieClasses
         }
         public static Matrice2D operator * (Matrice2D p_matrice1, Matrice2D p_matrice2)
         {
-            // Préconditions
-
             // Précondition
             if (p_matrice1 == null)
             {

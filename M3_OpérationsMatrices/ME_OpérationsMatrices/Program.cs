@@ -6,6 +6,7 @@ namespace ME_OpérationsMatrices
     {
         static void Main(string[] args)
         {
+            Matrice2D matrice =
         }
     }
 }

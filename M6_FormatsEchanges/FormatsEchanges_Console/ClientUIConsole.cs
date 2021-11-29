@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using FormatsEchanges_LibrairieClasses.Entites;
 using FormatsEchanges_LibrairieClasses.CoucheAccesDonneesXML;
-using AutoMapper;
 using FormatsEchanges_LibrairieClasses.TraitementsLots.ModifierPaysMajusculesClients;
 using FormatsEchanges_LibrairieClasses.TraitementsLots.ModifierNomPrenomPremiereLettreMajuscule;
 
