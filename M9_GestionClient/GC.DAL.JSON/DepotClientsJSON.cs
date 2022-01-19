@@ -34,13 +34,11 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.JSON
 
             this.SauvegarderDepot(clientsDTO);
         }
-
         public List<Client> ListerClients()
         {
             List<ClientJsonDTO> clientsDTO = this.ListerClientsDTO();
             return clientsDTO.Select(cDTO => cDTO.VersEntite()).ToList();
         }
-
         private List<ClientJsonDTO> ListerClientsDTO()
         {
             List<ClientJsonDTO> clients = null;
@@ -60,7 +58,6 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.JSON
 
             return clients;
         }
-
         public void ModifierClient(Client p_client)
         {
             if (p_client is null)
@@ -68,6 +65,7 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.JSON
                 throw new ArgumentNullException(nameof(p_client));
             }
             List<ClientJsonDTO> clientsDTO = this.ListerClientsDTO();
+
             if (clientsDTO.RemoveAll(cDTO => cDTO.ClientId == p_client.ClientId) != 1)
             {
                 throw new InvalidOperationException();
@@ -75,7 +73,6 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.JSON
             clientsDTO.Add(new ClientJsonDTO(p_client));
             this.SauvegarderDepot(clientsDTO);
         }
-
         private void SauvegarderDepot(List<ClientJsonDTO> clientsDTO)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings
@@ -86,12 +83,17 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.JSON
             string json = JsonConvert.SerializeObject(clientsDTO, settings);
             File.WriteAllText(this.m_nomFichier, json);
         }
-
         public Client RechercherClient(Guid p_clientId)
         {
             return this.ListerClientsDTO()
                 .Where(client => client.ClientId == p_clientId)
                 .Select(cDTO => cDTO.VersEntite()).SingleOrDefault();
         }
-    }
+        public List<Client> RechercherClients(string p_informationPartielle)
+        {
+            List<Client> clientsExistants = ListerClients();
+            List<Client> clientsFiltres = clientsExistants.Where(client => client.ToString().Contains(p_informationPartielle)).ToList();
+            return clientsFiltres;
+        }
+    }
 }

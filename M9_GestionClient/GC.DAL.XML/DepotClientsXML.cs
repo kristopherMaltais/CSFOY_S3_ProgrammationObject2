@@ -35,13 +35,11 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.XML
 
             this.SauvegarderDepot(clientsDTO);
         }
-
         public List<Client> ListerClients()
         {
             List<ClientXMLDTO> clientsDTO = this.ListerClientsDTO();
             return clientsDTO.Select(cDTO => cDTO.VersEntite()).ToList();
         }
-
         private List<ClientXMLDTO> ListerClientsDTO()
         {
             List<ClientXMLDTO> clients = null;
@@ -59,7 +57,6 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.XML
 
             return clients;
         }
-
         public void ModifierClient(Client p_client)
         {
             if (p_client is null)
@@ -74,7 +71,6 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.XML
             clientsDTO.Add(new ClientXMLDTO(p_client));
             this.SauvegarderDepot(clientsDTO);
         }
-
         private void SauvegarderDepot(List<ClientXMLDTO> clientsDTO)
         {
             XmlWriterSettings settings = new XmlWriterSettings();
@@ -89,12 +85,17 @@ namespace Module08_Exercice01_Base_Console.CoucheAccesDonnees.XML
                 doc.Close();
             }
         }
-
         public Client RechercherClient(Guid p_clientId)
         {
             return this.ListerClientsDTO()
                 .Where(client => client.ClientId == p_clientId)
                 .Select(cDTO => cDTO.VersEntite()).SingleOrDefault();
         }
-    }
+        public List<Client> RechercherClients(string p_informationPartielle)
+        {
+            List<Client> clientsExistants = ListerClients();
+            List<Client> clientsFiltres = clientsExistants.Where(client => client.ToString().Contains(p_informationPartielle)).ToList();
+            return clientsFiltres;
+        }
+    }
 }

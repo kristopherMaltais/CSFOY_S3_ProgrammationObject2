@@ -88,6 +88,7 @@ namespace WinFormsGestionClient
             this.bEnregistrerClient.TabIndex = 5;
             this.bEnregistrerClient.Text = "Enregistrer";
             this.bEnregistrerClient.UseVisualStyleBackColor = true;
+            this.bEnregistrerClient.Click += new System.EventHandler(this.bEnregistrerClient_Click);
             // 
             // fSaisieClient
             // 
@@ -105,6 +106,7 @@ namespace WinFormsGestionClient
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fSaisieClient";
             this.Text = "Saisie d\'un nouveau client";
+            this.Load += new System.EventHandler(this.fSaisieClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

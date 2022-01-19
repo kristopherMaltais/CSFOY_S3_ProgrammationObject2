@@ -10,5 +10,6 @@ namespace Module08_Exercice01_Base_Console.Entites
         List<Client> ListerClients();
         Client RechercherClient(Guid p_guid);
         void ModifierClient(Client p_client);
+        List<Client> RechercherClients(string p_informationPartielle);
     }
 }

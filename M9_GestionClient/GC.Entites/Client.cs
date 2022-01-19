@@ -16,7 +16,6 @@ namespace Module08_Exercice01_Base_Console.Entites
             get { return new List<Adresse>(this.m_adresses); }
             private set { this.m_adresses = value; }
         }
-
         public Client(Guid p_clientId, string p_nom, string p_prenom, IEnumerable<Adresse> p_adresses)
         {
             if (p_clientId == Guid.Empty)
@@ -42,7 +41,6 @@ namespace Module08_Exercice01_Base_Console.Entites
             this.m_adresses = new List<Adresse>();
             this.m_adresses.AddRange(p_adresses);
         }
-
         public void AjouterModifierAdresse(Adresse p_adresse)
         {
             if (p_adresse is null)
@@ -52,5 +50,9 @@ namespace Module08_Exercice01_Base_Console.Entites
             this.m_adresses.RemoveAll(a => a.AdresseId == p_adresse.AdresseId);
             this.m_adresses.Add(p_adresse);
         }
-    }
+        public override string ToString()
+        {
+            return $"{this.Prenom} {this.Nom}";
+        }
+    }
 }

@@ -15,6 +15,7 @@ namespace WinFormsGestionClient
     {
         // ** champs ** //
         private IDepotClients m_depotClient;
+
         // ** propriétés ** //
 
         // ** Constructeur ** //
@@ -24,13 +25,40 @@ namespace WinFormsGestionClient
             m_depotClient = p_depotClient;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        // ** Methodes ** //
+        private void tbRechercheClient_TextChanged(object sender, EventArgs e)
         {
+            
+            lbClients.Items.Clear();
+
+            Client[] clientsTrouves = m_depotClient.RechercherClients(tbRechercheClient.Text).ToArray();
+
+            if (!String.IsNullOrEmpty(tbRechercheClient.Text))
+            {
+                lbClients.Items.AddRange(clientsTrouves);
+            }
+        }
+        private void bNouveau_Click(object sender, EventArgs e)
+        {
+            fSaisieClient fenetreSaisieClient = new fSaisieClient();
+            fenetreSaisieClient.ShowDialog(this);
+
+            if (fenetreSaisieClient.DialogResult == DialogResult.OK)
+            {
+                m_depotClient.AjouterClient(fenetreSaisieClient.ResultatClient);
+            }
+        }
+        private void lbClients_DoubleClick(object sender, EventArgs e)
+        {
+            fSaisieClient fenetreSaisieClient = new fSaisieClient((Client)lbClients.SelectedItem);
+            fenetreSaisieClient.ShowDialog(this);
+
+            if (fenetreSaisieClient.DialogResult == DialogResult.OK)
+            {
+                tbRechercheClient.Text = "";
+                m_depotClient.ModifierClient(fenetreSaisieClient.ResultatClient);
+            }
 
         }
-
-        // ** Methodes ** //
-
-
     }
 }
