@@ -1,0 +1,202 @@
+[
+  {
+    "ClientId": "535e1d02-515b-4591-9b15-9e089d33f625",
+    "Nom": "Lévesque",
+    "Prenom": "emma",
+    "Adresses": [
+      {
+        "AdresseId": "1fb2a093-94e2-4b16-89c0-960b0b24d72d",
+        "NumeroCivique": 1489,
+        "InformationComplementaire": "rang de gravelle",
+        "Odonyme": "des roses",
+        "TypeVoie": "Avenue",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Quebec",
+        "Pays": "France"
+      },
+      {
+        "AdresseId": "edf10585-3e60-4a1d-b7e6-6c60001e3d0d",
+        "NumeroCivique": 918,
+        "InformationComplementaire": "belle route asphaltée",
+        "Odonyme": "du pommier",
+        "TypeVoie": "Rue",
+        "CodePostal": "GX8 2P2",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Ontario",
+        "Pays": "Russie"
+      },
+      {
+        "AdresseId": "e4ba520a-96fd-4136-a220-c47cc81ca152",
+        "NumeroCivique": 7716,
+        "InformationComplementaire": "rang de terre",
+        "Odonyme": "du pommier",
+        "TypeVoie": "Rang",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "Quebec",
+        "Etat": "Ontario",
+        "Pays": "USA"
+      }
+    ]
+  },
+  {
+    "ClientId": "b5cbdb56-1f6d-4747-93d2-b4dc97115c24",
+    "Nom": "Gagnon",
+    "Prenom": "noah",
+    "Adresses": [
+      {
+        "AdresseId": "4fd5849a-4004-47ea-98d1-ddfd7d34ab7e",
+        "NumeroCivique": 3226,
+        "InformationComplementaire": "route dangereuse",
+        "Odonyme": "de la grande route",
+        "TypeVoie": "Avenue",
+        "CodePostal": "G6X 2X4",
+        "NomMunicipalite": "Beauceville",
+        "Etat": "Ontario",
+        "Pays": "Russie"
+      },
+      {
+        "AdresseId": "abdf1be5-22d9-4cd3-ad4a-af7ef442e6fb",
+        "NumeroCivique": 5082,
+        "InformationComplementaire": "rang de terre",
+        "Odonyme": "du pommier",
+        "TypeVoie": "Rue",
+        "CodePostal": "G6X 2X4",
+        "NomMunicipalite": "Beauceville",
+        "Etat": "Alberta",
+        "Pays": "France"
+      },
+      {
+        "AdresseId": "87c92aab-f383-40b2-b3dc-b2b73818b42d",
+        "NumeroCivique": 7873,
+        "InformationComplementaire": "route dangereuse",
+        "Odonyme": "de la grande route",
+        "TypeVoie": "Boulevard",
+        "CodePostal": "G6X 2X4",
+        "NomMunicipalite": "Quebec",
+        "Etat": "Ontario",
+        "Pays": "France"
+      }
+    ]
+  },
+  {
+    "ClientId": "3dea3583-7164-447c-be5b-e02289e4e61c",
+    "Nom": "Lévesque",
+    "Prenom": "charlotte",
+    "Adresses": [
+      {
+        "AdresseId": "46fcf0bf-229c-4605-84e7-0baa838784d3",
+        "NumeroCivique": 4127,
+        "InformationComplementaire": "route dangereuse",
+        "Odonyme": "des roses",
+        "TypeVoie": "Avenue",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Alberta",
+        "Pays": "Canada"
+      }
+    ]
+  },
+  {
+    "ClientId": "a807d92f-9104-41b4-a2a8-1114ee16c3d1",
+    "Nom": "Tremblay",
+    "Prenom": "alice",
+    "Adresses": [
+      {
+        "AdresseId": "d6d283d7-9154-4f95-ae31-d159da799c49",
+        "NumeroCivique": 8701,
+        "InformationComplementaire": "rang de gravelle",
+        "Odonyme": "de la grande route",
+        "TypeVoie": "Rue",
+        "CodePostal": "GX8 2P2",
+        "NomMunicipalite": "Quebec",
+        "Etat": "Quebec",
+        "Pays": "France"
+      },
+      {
+        "AdresseId": "5d40986f-2895-456f-8d3f-e6f9a9eba2c9",
+        "NumeroCivique": 1180,
+        "InformationComplementaire": "rang de gravelle",
+        "Odonyme": "des roses",
+        "TypeVoie": "Rang",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "Ste-Foy",
+        "Etat": "Quebec",
+        "Pays": "France"
+      },
+      {
+        "AdresseId": "31332b65-55bb-4ab6-8524-ea127f01846a",
+        "NumeroCivique": 5072,
+        "InformationComplementaire": "belle route asphaltée",
+        "Odonyme": "de la grande route",
+        "TypeVoie": "Boulevard",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Saskatchewan",
+        "Pays": "Canada"
+      },
+      {
+        "AdresseId": "51353176-ab1c-4d9d-b86f-c65ee39db4c5",
+        "NumeroCivique": 6596,
+        "InformationComplementaire": "route dangereuse",
+        "Odonyme": "des perchaudes",
+        "TypeVoie": "Rang",
+        "CodePostal": "G3D G6X",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Ontario",
+        "Pays": "Russie"
+      }
+    ]
+  },
+  {
+    "ClientId": "a977a1b9-e611-4e53-978e-81e6ffd8d399",
+    "Nom": "Pelletier",
+    "Prenom": "charlotte",
+    "Adresses": [
+      {
+        "AdresseId": "71f8a78e-3723-4ebf-86d5-085150442b85",
+        "NumeroCivique": 5216,
+        "InformationComplementaire": "belle route asphaltée",
+        "Odonyme": "des roses",
+        "TypeVoie": "Rue",
+        "CodePostal": "G6X 2X4",
+        "NomMunicipalite": "Beauceville",
+        "Etat": "Quebec",
+        "Pays": "USA"
+      },
+      {
+        "AdresseId": "952303d3-ea31-45e6-a42e-1b91d04fcfa3",
+        "NumeroCivique": 5479,
+        "InformationComplementaire": "rang de terre",
+        "Odonyme": "des roses",
+        "TypeVoie": "Boulevard",
+        "CodePostal": "G5X 1X5",
+        "NomMunicipalite": "Beauceville",
+        "Etat": "Alberta",
+        "Pays": "Russie"
+      },
+      {
+        "AdresseId": "bc2f1d59-c2db-4f52-843d-9ee99ff21a31",
+        "NumeroCivique": 4224,
+        "InformationComplementaire": "belle route asphaltée",
+        "Odonyme": "de la grande route",
+        "TypeVoie": "Boulevard",
+        "CodePostal": "G5X 1X5",
+        "NomMunicipalite": "St-Georges",
+        "Etat": "Saskatchewan",
+        "Pays": "USA"
+      },
+      {
+        "AdresseId": "6232f102-f61a-41ea-8540-3105db011911",
+        "NumeroCivique": 4413,
+        "InformationComplementaire": "rang de gravelle",
+        "Odonyme": "des perchaudes",
+        "TypeVoie": "Rue",
+        "CodePostal": "G5X 1X5",
+        "NomMunicipalite": "Ste-Foy",
+        "Etat": "Alberta",
+        "Pays": "Canada"
+      }
+    ]
+  }
+]
