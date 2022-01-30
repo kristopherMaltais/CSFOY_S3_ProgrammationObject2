@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsApp1
 {
-    partial class Form2
+    partial class fImprimante
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,25 @@ namespace WinFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbInformationsClient = new System.Windows.Forms.TextBox();
+            this.tbImprimante = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // tbInformationsClient
+            // tbImprimante
             // 
-            this.tbInformationsClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbInformationsClient.Location = new System.Drawing.Point(29, 19);
-            this.tbInformationsClient.Margin = new System.Windows.Forms.Padding(2);
-            this.tbInformationsClient.Name = "tbInformationsClient";
-            this.tbInformationsClient.Size = new System.Drawing.Size(509, 23);
-            this.tbInformationsClient.TabIndex = 0;
+            this.tbImprimante.Location = new System.Drawing.Point(11, 12);
+            this.tbImprimante.Multiline = true;
+            this.tbImprimante.Name = "tbImprimante";
+            this.tbImprimante.Size = new System.Drawing.Size(273, 426);
+            this.tbImprimante.TabIndex = 0;
             // 
-            // Form2
+            // fImprimante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 55);
-            this.Controls.Add(this.tbInformationsClient);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form2";
-            this.Text = "Écran client";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.ClientSize = new System.Drawing.Size(297, 450);
+            this.Controls.Add(this.tbImprimante);
+            this.Name = "fImprimante";
+            this.Text = "Imprimante";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,6 +55,6 @@ namespace WinFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbInformationsClient;
+        private System.Windows.Forms.TextBox tbImprimante;
     }
 }

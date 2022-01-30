@@ -28,7 +28,7 @@ namespace LibrairieClasses
         // ** Méthodes ** //
         public override string ToString()
         {
-            return $"{this.Description}    {this.Quantite} @ {this.Prix}$";
+            return $"{this.Description}    {this.Quantite} @ {this.Prix}$\n";
         }
     }
 }

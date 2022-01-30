@@ -11,22 +11,24 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class fPrincipale : Form
     {
         // ** Champs ** //
         private Facture m_facture;
         private ObservateurFacture m_observateur;
-        private Form2 m_client;
+        private fClient m_client;
+        private fImprimante m_imprimante;
 
         // ** Propriétés ** //
 
 
         // ** Constructeurs ** //
-        public Form1()
+        public fPrincipale()
         {
             InitializeComponent();
             this.m_facture = new Facture();
-            this.m_client = new Form2(this.m_facture);
+            this.m_client = new fClient(this.m_facture);
+            this.m_imprimante = new fImprimante(this.m_facture);
             
             this.m_observateur = new ObservateurFacture(
                 factureEvent =>
@@ -64,6 +66,7 @@ namespace WinFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             this.m_client.Show();
+            this.m_imprimante.Show();
         }
     }
 }

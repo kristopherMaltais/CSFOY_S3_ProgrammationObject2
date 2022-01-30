@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class fClient : Form
     {
         // ** Champs ** //
         private Facture m_facture;
@@ -22,7 +22,7 @@ namespace WinFormsApp1
         // ** Constructeur ** //
 
         // ** Méthodes ** //
-        public Form2(Facture p_facture)
+        public fClient(Facture p_facture)
         {
             InitializeComponent();
             this.m_facture = p_facture;
