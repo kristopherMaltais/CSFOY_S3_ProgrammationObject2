@@ -24,11 +24,11 @@ namespace LibrairieClasses
         // ** méthodes ** //
         public void OnCompleted()
         {
-            throw new NotImplementedException();
+            ;
         }
         public void OnError(Exception p_error)
         {
-            throw new NotImplementedException();
+            ;
         }
         public void OnNext(FactureEvent p_value)
         {
