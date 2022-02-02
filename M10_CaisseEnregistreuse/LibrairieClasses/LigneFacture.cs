@@ -11,10 +11,10 @@ namespace LibrairieClasses
         // ** Champs ** //
 
         // ** Propriétés ** //
-        public string Description { get; set; }
-        public int Quantite { get; set; }
-        public decimal Prix { get; set; }
-        public decimal Total { get; set; }
+        public string Description { get; private set; }
+        public int Quantite { get; private set; }
+        public decimal Prix { get; private set; }
+        public decimal Total { get; private    set; }
 
         // ** Constructeurs ** //
         public LigneFacture(string p_description, int p_quantite, decimal p_prix)
