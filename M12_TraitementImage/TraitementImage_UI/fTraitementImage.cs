@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TraitementImages_UI
+namespace TraitementImage_UI
 {
-    public partial class Form1 : Form
+    public partial class fTraitementImage : Form
     {
-        public Form1()
+        public fTraitementImage()
         {
             InitializeComponent();
         }
