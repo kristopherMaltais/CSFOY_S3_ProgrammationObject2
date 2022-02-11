@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using static TraitementImage_LibrairieClasse.UtilitaireTraitements;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TraitementImage_LibrairieClasse
 {
+    [Description("Traiter couler noir et blanc")]
     public class TraitementImageConvertirNoirEtBlanc : ITraitementImage
     {
         // ** Champs ** //
 
         // ** Propriétés ** //
-        public ITraitementImage Suivant { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Browsable(false)]
+        public ITraitementImage Suivant { get; set; }
 
         // ** Constructeurs ** //
 
@@ -27,7 +31,13 @@ namespace TraitementImage_LibrairieClasse
                 raw[l3 + 1] = luminance;
                 raw[l3 + 2] = luminance;
             }
+
+            this.Suivant?.TraiterImage(p_image);
         }
-        
+        public override string ToString()
+        {
+            return UtilitaireTraitements.DescriptionTraitement(this);
+        }
+
     }
 }

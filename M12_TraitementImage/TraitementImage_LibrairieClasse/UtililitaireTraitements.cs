@@ -8,36 +8,32 @@ using System.Threading.Tasks;
 
 namespace TraitementImage_LibrairieClasse
 {
-    class UtililitaireTraitements
+    public static class UtilitaireTraitements
     {
-        public static class UtilitaireTraitements
+        public static IEnumerable<CreateurTraitement> RechercherTraitementsImage()
         {
+            Type typeITraitementImage = typeof(ITraitementImage);
 
-            public static IEnumerable<CreateurTraitement> RechercherTraitementsImage()
+            List<Type> traitements = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(e => e.GetTypes())
+                .Where(t => typeITraitementImage.IsAssignableFrom(t)
+                && t.GetCustomAttribute<DescriptionAttribute>() != null)
+                .ToList();
+
+
+            return traitements.Select(t => new CreateurTraitement() { Type = t });
+        }
+        public static string DescriptionTraitement(ITraitementImage p_traitementImage)
+        {
+            string res = p_traitementImage.GetType().Name;
+            DescriptionAttribute da = p_traitementImage.GetType().GetCustomAttribute<DescriptionAttribute>();
+
+            if (da != null)
             {
-                Type typeITraitementImage = typeof(ITraitementImage);
-
-                List<Type> traitements = AppDomain.CurrentDomain.GetAssemblies()
-                    .SelectMany(e => e.GetTypes())
-                    .Where(t => typeITraitementImage.IsAssignableFrom(t)
-                    && t.GetCustomAttribute<DescriptionAttribute>() != null)
-                    .ToList();
-
-
-                return traitements.Select(t => new CreateurTraitement() { Type = t });
+                res = da.Description;
             }
-            public static string DescriptionTraitement(ITraitementImage p_traitementImage)
-            {
-                string res = p_traitementImage.GetType().Name;
-                DescriptionAttribute da = p_traitementImage.GetType().GetCustomAttribute<DescriptionAttribute>();
 
-                if (da != null)
-                {
-                    res = da.Description;
-                }
-
-                return res;
-            }
+            return res;
         }
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using static TraitementImage_LibrairieClasse.UtilitaireTraitements;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TraitementImage_LibrairieClasse.TraitementsImage
 {
+    [Description("Traiter le flou de l'image")]
     public class TraitementImageFlou : TraitementImageMasque
     {
         // ** Champs ** //
@@ -13,7 +16,13 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
         // ** Propriétés ** //
 
         // ** Constructeurs ** //
-
+        public TraitementImageFlou()
+        {
+            base.Transformation = t =>
+            {
+                return TraiterDonnees(t);
+            };
+        }
         // ** Méthodes ** //
         private static byte TraiterDonnees(byte[] p_donnees)
         {
@@ -24,6 +33,10 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
             }
 
             return (byte)(somme / p_donnees.Length);
+        }
+        public override string ToString()
+        {
+            return UtilitaireTraitements.DescriptionTraitement(this);
         }
     }
 }

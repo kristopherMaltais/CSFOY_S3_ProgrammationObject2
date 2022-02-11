@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TraitementImage_LibrairieClasse.TraitementsImage
 {
+    [Description("Traiter le contour de l'image")]
     public class TraitementImageContours : TraitementImageMasque
     {
         // ** Champs ** //
@@ -30,6 +32,10 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
                 somme -= p_donnees[i];
             }
             return (byte)(somme / p_donnees.Length);
+        }
+        public override string ToString()
+        {
+            return UtilitaireTraitements.DescriptionTraitement(this);
         }
     }
 }

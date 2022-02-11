@@ -34,7 +34,7 @@ namespace TraitementImage_UI
             this.tsmiOuvrir = new System.Windows.Forms.ToolStripMenuItem();
             this.ssStatut = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.pgProprieteTraitementSelectionne = new System.Windows.Forms.PropertyGrid();
             this.lbSuiteTraitementsAAppliquer = new System.Windows.Forms.ListBox();
             this.pAppliquerSuiteTraitements = new System.Windows.Forms.Panel();
             this.bAppliquerSuiteTraitements = new System.Windows.Forms.Button();
@@ -81,6 +81,7 @@ namespace TraitementImage_UI
             this.tsmiOuvrir.Name = "tsmiOuvrir";
             this.tsmiOuvrir.Size = new System.Drawing.Size(163, 34);
             this.tsmiOuvrir.Text = "Ouvrir";
+            this.tsmiOuvrir.Click += new System.EventHandler(this.tsmiOuvrir_Click);
             // 
             // ssStatut
             // 
@@ -102,7 +103,7 @@ namespace TraitementImage_UI
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.propertyGrid1);
+            this.splitContainer1.Panel1.Controls.Add(this.pgProprieteTraitementSelectionne);
             this.splitContainer1.Panel1.Controls.Add(this.lbSuiteTraitementsAAppliquer);
             this.splitContainer1.Panel1.Controls.Add(this.pAppliquerSuiteTraitements);
             this.splitContainer1.Panel1.Controls.Add(this.pControlSuiteTraitements);
@@ -114,12 +115,12 @@ namespace TraitementImage_UI
             this.splitContainer1.SplitterDistance = 507;
             this.splitContainer1.TabIndex = 2;
             // 
-            // propertyGrid1
+            // pgProprieteTraitementSelectionne
             // 
-            this.propertyGrid1.Location = new System.Drawing.Point(10, 482);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(490, 405);
-            this.propertyGrid1.TabIndex = 3;
+            this.pgProprieteTraitementSelectionne.Location = new System.Drawing.Point(10, 482);
+            this.pgProprieteTraitementSelectionne.Name = "pgProprieteTraitementSelectionne";
+            this.pgProprieteTraitementSelectionne.Size = new System.Drawing.Size(490, 405);
+            this.pgProprieteTraitementSelectionne.TabIndex = 3;
             // 
             // lbSuiteTraitementsAAppliquer
             // 
@@ -129,6 +130,7 @@ namespace TraitementImage_UI
             this.lbSuiteTraitementsAAppliquer.Name = "lbSuiteTraitementsAAppliquer";
             this.lbSuiteTraitementsAAppliquer.Size = new System.Drawing.Size(490, 179);
             this.lbSuiteTraitementsAAppliquer.TabIndex = 2;
+            this.lbSuiteTraitementsAAppliquer.SelectedIndexChanged += new System.EventHandler(this.lbSuiteTraitementsAAppliquer_SelectedIndexChanged);
             // 
             // pAppliquerSuiteTraitements
             // 
@@ -146,6 +148,7 @@ namespace TraitementImage_UI
             this.bAppliquerSuiteTraitements.TabIndex = 3;
             this.bAppliquerSuiteTraitements.Text = "Appliquer";
             this.bAppliquerSuiteTraitements.UseVisualStyleBackColor = true;
+            this.bAppliquerSuiteTraitements.Click += new System.EventHandler(this.bAppliquerSuiteTraitements_Click);
             // 
             // pControlSuiteTraitements
             // 
@@ -167,6 +170,7 @@ namespace TraitementImage_UI
             this.bSupprimerTraitement.TabIndex = 4;
             this.bSupprimerTraitement.Text = "-\r\n";
             this.bSupprimerTraitement.UseVisualStyleBackColor = true;
+            this.bSupprimerTraitement.Click += new System.EventHandler(this.bSupprimerTraitement_Click);
             // 
             // bAjouterTraitement
             // 
@@ -176,6 +180,7 @@ namespace TraitementImage_UI
             this.bAjouterTraitement.TabIndex = 3;
             this.bAjouterTraitement.Text = "+\r\n";
             this.bAjouterTraitement.UseVisualStyleBackColor = true;
+            this.bAjouterTraitement.Click += new System.EventHandler(this.bAjouterTraitement_Click);
             // 
             // bSuiteTraitementsDeplacerBas
             // 
@@ -185,6 +190,7 @@ namespace TraitementImage_UI
             this.bSuiteTraitementsDeplacerBas.TabIndex = 2;
             this.bSuiteTraitementsDeplacerBas.Text = "v\r\n";
             this.bSuiteTraitementsDeplacerBas.UseVisualStyleBackColor = true;
+            this.bSuiteTraitementsDeplacerBas.Click += new System.EventHandler(this.bSuiteTraitementsDeplacerBas_Click);
             // 
             // bSuiteTraitementsDeplacerHaut
             // 
@@ -194,6 +200,7 @@ namespace TraitementImage_UI
             this.bSuiteTraitementsDeplacerHaut.TabIndex = 1;
             this.bSuiteTraitementsDeplacerHaut.Text = "^\r\n";
             this.bSuiteTraitementsDeplacerHaut.UseVisualStyleBackColor = true;
+            this.bSuiteTraitementsDeplacerHaut.Click += new System.EventHandler(this.bSuiteTraitementsDeplacerHaut_Click);
             // 
             // cbTraitementAAjouter
             // 
@@ -231,6 +238,7 @@ namespace TraitementImage_UI
             this.Controls.Add(this.msPrincipal);
             this.Name = "fTraitementImage";
             this.Text = "Traitement d\'image";
+            this.Load += new System.EventHandler(this.fTraitementImage_Load);
             this.msPrincipal.ResumeLayout(false);
             this.msPrincipal.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -261,7 +269,7 @@ namespace TraitementImage_UI
         private System.Windows.Forms.ComboBox cbTraitementAAjouter;
         private System.Windows.Forms.Button bSuiteTraitementsDeplacerBas;
         private System.Windows.Forms.Button bSuiteTraitementsDeplacerHaut;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.PropertyGrid pgProprieteTraitementSelectionne;
         private System.Windows.Forms.Button bSupprimerTraitement;
         private System.Windows.Forms.Button bAjouterTraitement;
         private System.Windows.Forms.Panel pCanvas;

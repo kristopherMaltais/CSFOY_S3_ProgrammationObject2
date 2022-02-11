@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using static TraitementImage_LibrairieClasse.UtilitaireTraitements;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace TraitementImage_LibrairieClasse.TraitementsImage
 {
     public abstract class TraitementImageMasque : ITraitementImage
     {
         // ** Champs ** //
-        private int m_largeur;
+        private int m_largeur = 7;
 
         // ** Propriétés ** //
-        public ITraitementImage Suivant { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Browsable(false)]
+        public ITraitementImage Suivant { get; set; }
         public int Largeur
         {
             get => this.m_largeur;
@@ -31,6 +34,7 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
 
             }
         }
+        public Func<byte[], byte> Transformation { get; set; }
 
         // ** Constructeurs ** //
 
@@ -66,10 +70,12 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
             }
 
             Array.Copy(res, raw, raw.Length);
+
+            this.Suivant?.TraiterImage(p_image);
         }
-        public byte Transformation(byte[] p_tableauByte)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return UtilitaireTraitements.DescriptionTraitement(this);
         }
     }
           

@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TraitementImage_LibrairieClasse\TraitementImage_LibrairieClasse.csproj" />
+  </ItemGroup>
+
 </Project>

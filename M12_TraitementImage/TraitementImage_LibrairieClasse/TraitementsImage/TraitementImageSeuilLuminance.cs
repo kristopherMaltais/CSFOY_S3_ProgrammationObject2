@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using static TraitementImage_LibrairieClasse.UtilitaireTraitements;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace TraitementImage_LibrairieClasse.TraitementsImage
 {
+    [Description("Traiter le seuil luminance de l'image")]
     class TraitementImageSeuilLuminance : ITraitementImage
     {
         // ** Champs ** //
 
         // ** Propriétés ** //
+        [Browsable(false)]
         public ITraitementImage Suivant { get; set; }
         public int Seuil { get; set; }
 
@@ -35,6 +39,10 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
             }
 
             this.Suivant?.TraiterImage(p_image);
+        }
+        public override string ToString()
+        {
+            return UtilitaireTraitements.DescriptionTraitement(this);
         }
     }
 }
