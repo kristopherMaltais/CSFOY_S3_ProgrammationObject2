@@ -16,7 +16,7 @@ namespace SingletonClasses
         {
             Modele = p_modele;
             Annee = Annee;
-            IdentifiantUnique = Singleton<GenerateurIdentifiant>.Instance.;
+            IdentifiantUnique = Singleton<GenerateurIdentifiant>;
         }
 
         // ** Méthodes ** //

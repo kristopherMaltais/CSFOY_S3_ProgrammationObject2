@@ -15,6 +15,13 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
         // ** Propriétés ** //
 
         // ** Constructeur ** //
+        public TraitementImageContours()
+        {
+            base.Transformation = t =>
+            {
+                return TraiterDonnees(t);
+            };
+        }
 
         // ** Méthodes ** //
         private static byte TraiterDonnees(byte[] p_donnees)

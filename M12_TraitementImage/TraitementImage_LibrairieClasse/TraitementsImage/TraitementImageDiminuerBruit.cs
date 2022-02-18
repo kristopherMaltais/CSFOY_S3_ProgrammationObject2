@@ -16,6 +16,13 @@ namespace TraitementImage_LibrairieClasse.TraitementsImage
         // ** Propriétés ** //
 
         // ** Constructeurs ** //
+        public TraitementImageDiminuerBruit()
+        {
+            base.Transformation = t =>
+            {
+                return TraiterDonnees(t);
+            };
+        }
 
         // ** Méthodes ** //
         private static byte TraiterDonnees(byte[] p_donnees)

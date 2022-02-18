@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace SingletonClasses
 {
-    public class Singleton<TypeElement>
-    where TypeElement : class, new()
+    public class Singleton
     {
         // ** Champs ** //
-        private static Singleton<TypeElement> _instance;
+        private static GenerateurIdentifiant _instance;
         private static object _lock = new object();
 
         // ** Propriétés**
-        public static Singleton<TypeElement> Instance
+        public static GenerateurIdentifiant Instance
         {
             get
             {
@@ -24,7 +23,7 @@ namespace SingletonClasses
                     {
                         if(_instance is null)
                         {
-                            _instance = new Singleton<TypeElement>();
+                            _instance = new GenerateurIdentifiant();
                         }
                     }
                 }
@@ -36,5 +35,25 @@ namespace SingletonClasses
         // ** Constructeurs ** /
 
         // ** méthodes ** //
+        public int GenererInstance()
+        {
+           return _instance.GenererProchainId();
+        }
+    }
+    internal class GenerateurIdentifiant
+    {
+        // ** Champs ** //
+        private int m_identifiant;
+
+        // ** propriétés ** //
+
+        // ** Constructeurs ** //
+
+        // ** Méthodes ** //
+        public int GenererProchainId()
+        {
+            this.m_identifiant++;
+            return this.m_identifiant;
+        }
     }
 }

@@ -53,12 +53,12 @@ namespace TraitementImage_UI
 
             if (cbTraitementAAjouter.SelectedItem is not null)
             { 
-                lbSuiteTraitementsAAppliquer.Items.Add(cbTraitementAAjouter.SelectedItem);
+                lbSuiteTraitementsAAppliquer.Items.Add(((CreateurTraitement)cbTraitementAAjouter.SelectedItem).Creer());
             }
         }
         private void bAppliquerSuiteTraitements_Click(object sender, EventArgs e)
         {
-            CreateurTraitement[] traitements = new CreateurTraitement[lbSuiteTraitementsAAppliquer.Items.Count];
+            ITraitementImage[] traitements = new ITraitementImage[lbSuiteTraitementsAAppliquer.Items.Count];
             lbSuiteTraitementsAAppliquer.Items.CopyTo(traitements, 0);
 
             ITraitementImage traitementAEffectuer = CreerChaineTraitement(traitements);
@@ -103,25 +103,22 @@ namespace TraitementImage_UI
         }
         private void lbSuiteTraitementsAAppliquer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CreateurTraitement proprietesTraitementAAfficher = (CreateurTraitement)lbSuiteTraitementsAAppliquer.SelectedItem;
-            pgProprieteTraitementSelectionne.SelectedObject = proprietesTraitementAAfficher is null ? null : proprietesTraitementAAfficher.Creer();
-
-
+            pgProprieteTraitementSelectionne.SelectedObject = lbSuiteTraitementsAAppliquer.SelectedItem;
         }
-        private ITraitementImage CreerChaineTraitement(CreateurTraitement[] p_traitements)
+        private ITraitementImage CreerChaineTraitement(ITraitementImage[] p_traitements)
         {
             ITraitementImage chaineTraitement = null;
             ITraitementImage dernierTraitementAjoute = null;
-            for (int index = 0; index < lbSuiteTraitementsAAppliquer.Items.Count; index++)
+            for (int index = 0; index < p_traitements.Length; index++)
             {
                 if(index == 0)
                 {
-                    chaineTraitement = p_traitements[index].Creer();
+                    chaineTraitement = p_traitements[index];
                     dernierTraitementAjoute = chaineTraitement;
                 }
                 else
                 {
-                    dernierTraitementAjoute.Suivant = p_traitements[index].Creer();
+                    dernierTraitementAjoute.Suivant = p_traitements[index];
                     dernierTraitementAjoute = dernierTraitementAjoute.Suivant;
                 }
 
